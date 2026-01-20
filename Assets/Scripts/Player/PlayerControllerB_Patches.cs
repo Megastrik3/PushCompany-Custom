@@ -14,7 +14,7 @@ namespace PushCompany.Assets.Scripts
         static void Update(PlayerControllerB __instance)
         {
             if (!__instance.IsOwner) return;
-            if (!__instance.playerActions.Movement.Interact.WasPressedThisFrame()) return;
+            if (!UnityEngine.Input.GetKeyDown(PushCompanyBase.config_PushKey.Value)) return;
 
             if (pushComponent == null)
             {

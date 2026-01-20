@@ -24,6 +24,8 @@ namespace PushCompany
             config_PushRange,
             config_PushCost;
 
+        public static ConfigEntry<KeyCode> config_PushKey;
+
         private void Awake()
         {
             mls = BepInEx.Logging.Logger.CreateLogSource(PluginInfo.PLUGIN_GUID);
@@ -59,6 +61,7 @@ namespace PushCompany
             config_PushForce = Config.Bind("Push Force", "Value", 12.5f, "How strong the player pushes.");
             config_PushRange = Config.Bind("Push Range", "Value", 3.0f, "The distance the player is able to push.");
             config_PushCost = Config.Bind("Push Cost", "Value", 0.08f, "The energy cost of each push.");
+            config_PushKey = Config.Bind("Push Key", "Value", KeyCode.E, "The Hotkey to push.");
         }
 
         private void LoadBundle()
